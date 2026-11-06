@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sae-weight-analysis"
+version = "0.1.0"
+description = "Weight-based analysis of sparse autoencoder features."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "torch==2.9.1",
+    "transformers==4.57.3",
+    "sae-lens==6.22.3",
+    "numpy==2.3.5",
+    "pandas==2.3.3",
+    "pyarrow==22.0.0",
+    "scipy==1.16.3",
+    "Levenshtein==0.27.3",
+    "httpx==0.28.1",
+]
+
+[project.scripts]
+sae-weight-analysis = "sae_weight_analysis.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["sae_weight_analysis*"]
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"
+default = true
